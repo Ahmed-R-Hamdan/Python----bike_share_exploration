@@ -13238,13 +13238,15 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dataset-Overview">Dataset Overview<a class="anchor-link" href="#Dataset-Overview">&#182;</a></h2><blockquote><p>The data consisted of trip and user details for each bike using at Feb 2019 approximately 175000 trip. The attributes included the start and end (time and station) details, as well as user (gender, birth year, subscription) details.</p>
-<ul>
-<li>We removed trips with missing data (8462) trip</li>
-<li>Since the main idea of bike share is using bike to move inside city fast from point to point not keeping bike with customer for long time or next day, so we select the max period of bike usage is 45 minutes and remove dataset which exceed that limit (2306) trip</li>
-<li>Also we removed we remove all trips for subscribers above 80 old as we suspect that it's false data as bike is not safe for aging people (203) trip</li>
-</ul>
+<h2 id="Dataset-Overview">Dataset Overview<a class="anchor-link" href="#Dataset-Overview">&#182;</a></h2><blockquote><p>Dataset Overview</p>
 </blockquote>
+<p>The dataset consists of trip and user details for each bike usage in February 2019, covering approximately 175,000 trips. The attributes include:</p>
+<ul>
+<li><p>Trip Details: Start and end time, start and end station.</p>
+</li>
+<li><p>User Details: Gender, birth year, and subscription type.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13252,7 +13254,34 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Distribution-of-Bike-Using-Duration">Distribution of Bike Using Duration<a class="anchor-link" href="#Distribution-of-Bike-Using-Duration">&#182;</a></h2><blockquote><p>Duration of using bikes in the dataset has a very large range of values, from about 1 Minute at the lowest, to about 45 Minutes at the highest. Plotted on a logarithmic scale, the distribution of duration takes  a unimodal shape with peak at about 9 minutes.</p>
+<h2 id="Data-Cleaning-Process">Data Cleaning Process<a class="anchor-link" href="#Data-Cleaning-Process">&#182;</a></h2><p>To ensure data quality, the following steps were taken:</p>
+<ul>
+<li><p>Removed Trips with Missing Data</p>
+<ul>
+<li>8,462 trips were excluded due to incomplete records.</li>
+</ul>
+</li>
+<li><p>Filtered Out Unusually Long Trips</p>
+<ul>
+<li>The dataset was limited to trips lasting a maximum of 45 minutes, removing 2,306 trips that exceeded this limit.</li>
+<li>This threshold was set based on the primary purpose of bike-sharing systems—providing fast, point-to-point urban transportation rather than long-term bike usage.</li>
+</ul>
+</li>
+<li><p>Excluded Trips from Users Aged 80+</p>
+<ul>
+<li>203 trips were removed, as data from users aged above 80 years were considered potentially inaccurate or unsafe for bike-sharing usage.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Distribution-of-Bike-Using-Duration">Distribution of Bike Using Duration<a class="anchor-link" href="#Distribution-of-Bike-Using-Duration">&#182;</a></h2><blockquote><p>The duration of bike trips in the dataset varies significantly, ranging from as short as 1 minute to a maximum of 45 minutes.</p>
+<p>When plotted on a logarithmic scale, the distribution exhibits a unimodal shape, with a clear peak around 9 minutes. This indicates that most users take short trips, reinforcing the primary function of bike-sharing as <strong>a quick and efficient urban mobility solution</strong>.</p>
 </blockquote>
 
 </div>
@@ -13311,7 +13340,8 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Trips-and-Durations-on-Weekly-Basis">Trips and Durations on Weekly Basis<a class="anchor-link" href="#Trips-and-Durations-on-Weekly-Basis">&#182;</a></h2><blockquote><p>Number of trips at weekdays is about double than weekends but on average at weekends duration spent on using bikes is slightly more than weekdays</p>
+<h2 id="Trips-and-Durations-on-Weekly-Basis">Trips and Durations on Weekly Basis<a class="anchor-link" href="#Trips-and-Durations-on-Weekly-Basis">&#182;</a></h2><blockquote><p>Bike usage follows a distinct weekly pattern, with the number of trips on weekdays nearly double that of weekends. This suggests that bike-sharing is primarily used for weekday commuting.</p>
+<p>However, while fewer trips occur on weekends, the average trip duration is slightly longer compared to weekdays. This indicates a shift in user behavior, where bikes are likely used for leisure, recreational rides, or casual outings rather than short, point-to-point commuting.</p>
 </blockquote>
 
 </div>
@@ -13376,7 +13406,8 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Trips-and-Durations-on-Hourly-Basis">Trips and Durations on Hourly Basis<a class="anchor-link" href="#Trips-and-Durations-on-Hourly-Basis">&#182;</a></h2><blockquote><p>Distribution of number of trips represent that people depend on bikes share system as transportation method to go to work and return back after working hours as in weekdays at <strong>8 AM</strong> and <strong>5 PM</strong> represent the maximum trips counts</p>
+<h2 id="Trips-and-Durations-on-Hourly-Basis">Trips and Durations on Hourly Basis<a class="anchor-link" href="#Trips-and-Durations-on-Hourly-Basis">&#182;</a></h2><blockquote><p>The distribution of trips by hour highlights that the bike-sharing system is primarily used as a commuting method. On weekdays, trip volume peaks at 8 AM and 5 PM, aligning with typical work start and end times. This pattern suggests that many users rely on bike-sharing for traveling to and from work.</p>
+<p>During off-peak hours, trip counts decline, reinforcing the idea that bike-sharing serves as a convenient alternative to public transport for daily commuters rather than a consistently used mode of transport throughout the day.</p>
 </blockquote>
 
 </div>
@@ -13446,8 +13477,17 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Weeddays-VS.-Weekends">Weeddays VS. Weekends<a class="anchor-link" href="#Weeddays-VS.-Weekends">&#182;</a></h2><blockquote><p>The behavior of using bikes changed at weekends as the two peaks of 8 AM and 5 PM not exist anymore, people using bikes along the day hours from 10 AM till 6 PM, also people use bikes till after midnights at weekends only</p>
+<h2 id="Weeddays-VS.-Weekends">Weeddays VS. Weekends<a class="anchor-link" href="#Weeddays-VS.-Weekends">&#182;</a></h2><blockquote><p>Bike usage patterns differ significantly between weekdays and weekends.</p>
 </blockquote>
+<ul>
+<li><p><strong>Weekdays</strong>: Usage is primarily driven by commuting needs, with clear peaks at 8 AM and 5 PM, corresponding to work start and end times.</p>
+</li>
+<li><p><strong>Weekend</strong>s: The structured commuting pattern disappears, and bike usage becomes more evenly distributed throughout the day, with activity rising from 10 AM and continuing until 6 PM.</p>
+</li>
+<li><p><strong>Late-Night Usage</strong>: Unlike weekdays, bike trips extend past midnight on weekends, indicating increased usage for leisure, social outings, or late-night travel.</p>
+</li>
+</ul>
+<p>This shift suggests that while bike-sharing is a commuter-focused service during the week, it transitions into a recreational and flexible transport option on weekends.</p>
 
 </div>
 </div>
@@ -13504,7 +13544,8 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Age-and-Bikes">Age and Bikes<a class="anchor-link" href="#Age-and-Bikes">&#182;</a></h2><blockquote><p>People between 20 and 40 years old are most users for bike share and spend wide range of durations using bikes from 5 minutes till 45 minutes but the maximum duration is below 15 minutes, as the members getting older the spent less durations and fewer number of trips</p>
+<h2 id="Age-and-Bike-Usage-Trends">Age and Bike Usage Trends<a class="anchor-link" href="#Age-and-Bike-Usage-Trends">&#182;</a></h2><blockquote><p>The majority of bike-share users fall within the 20 to 40-year-old age group. This segment takes the highest number of trips and exhibits a wide range of trip durations, typically between 5 and 45 minutes, with most trips lasting under 15 minutes.</p>
+<p>As users age, both trip frequency and duration decline, indicating that older individuals are less reliant on bike-sharing. This trend suggests that bike-sharing is more popular among younger, active commuters, while older users may prefer alternative transportation methods.</p>
 </blockquote>
 
 </div>
@@ -13576,8 +13617,14 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Male-VS.-Female">Male VS. Female<a class="anchor-link" href="#Male-VS.-Female">&#182;</a></h2><blockquote><p>Males are doing more trips than Females with <strong>Large Difference</strong> but on average Females spending more time using bikes with <strong>Little Difference</strong></p>
-</blockquote>
+<h2 id="Male-vs.-Female-Bike-Usage">Male vs. Female Bike Usage<a class="anchor-link" href="#Male-vs.-Female-Bike-Usage">&#182;</a></h2><ul>
+<li><p><strong>Trip Volume</strong>: Males take significantly more trips than females, indicating higher overall engagement with the bike-sharing system.</p>
+</li>
+<li><p><strong>Trip Duration</strong>: While females take fewer trips, they spend slightly more time per ride on average compared to males.</p>
+</li>
+</ul>
+<p>This suggests potential differences in <strong>trip purpose</strong> or <strong>riding behavior</strong>, where males may use bikes more frequently for short, point-to-point commutes, while females may take longer, more leisurely rides.</p>
+<p>Understanding these patterns can help tailor marketing strategies and service improvements to encourage higher female participation.</p>
 
 </div>
 </div>
@@ -13643,8 +13690,13 @@ $(document).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Trips-and-Durations-on-Hourly-Basis-Per-Gender">Trips and Durations on Hourly Basis Per Gender<a class="anchor-link" href="#Trips-and-Durations-on-Hourly-Basis-Per-Gender">&#182;</a></h2><blockquote><p>After midnight hours noticed that on average duration difference between females and males increased as females may prefer using bike rather than walking for safety issues</p>
-</blockquote>
+<h2 id="Hourly-Bike-Usage-and-Duration-by-Gender">Hourly Bike Usage and Duration by Gender<a class="anchor-link" href="#Hourly-Bike-Usage-and-Duration-by-Gender">&#182;</a></h2><ul>
+<li><p>Throughout the day, males consistently take more trips than females, but the average trip duration remains relatively close between genders.</p>
+</li>
+<li><p>After midnight, the gap in average trip duration widens, with females spending more time per trip than males.</p>
+</li>
+</ul>
+<p>This trend suggests that safety concerns may influence female riders' behavior, making bikes a preferred alternative to walking during late-night hours. Addressing these concerns through well-lit bike stations, safer routes, and targeted safety initiatives could encourage even greater female participation in the bike-sharing system.</p>
 
 </div>
 </div>
